@@ -1,0 +1,47 @@
+body{font-family: verdana,sans-serif;}
+header, .content, footer{
+	width: 960px;
+	margin: 0 auto;
+}
+
+header{
+	border-bottom: 1px solid #ccc;
+	background-color: #f4fcf1;
+}
+
+.content{
+	padding: 10px;
+}
+
+.infotable, .host, .url{
+	width: 100%;
+}
+
+.menu{ padding: 3px 10px;}
+.history{ list-style: none; padding: 0; margin: 0; margin-bottom: 10px; display: block; font-size: 11px;}
+.history a{text-decoration: none;}
+.history li { background-color: #6fba79; padding: 3px 0px; border-bottom: 2px solid #edf7ef; display: block; float: left; width: 100%}
+.wapper{float: left; width: auto;margin-right: 20px; line-height: 28px;}
+.action{background-color: #1e3f23; padding: 3px 5px; margin-right: 5px; color: #fff; float: right; display: inlie-block;}
+.action:hover, .del_url:hover{ background-color: #811a20;}
+
+.del_url{padding: 3px; color:#fff;}
+.res_style{background-color:#fff; border: 2px solid #6fba79;}
+
+.status{font-weight: blod; font-size: 16px;}
+.res_url{margin: 0; padding: 0; color: #3447f3;}
+.clear{ clear: both; }
+.right{ float: right;}
+.left{float: left;}
+.red{ color: red;}
+.line { height: 1px; border: none; background-color: #205611;}
+
+fieldset{ border: 2px solid #205611; font-size: 11px;}
+legend{background-color: #205611; color: #fff; font-weight: blod;}
+
+footer{
+	border-top: 1px solid #ccc;
+	text-align: right;
+	line-height: 30px;
+	background-color: #f4fcf1;
+}

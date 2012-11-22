@@ -1,0 +1,18 @@
+$def with (data)
+
+<ul class="history">
+$for item in data:
+	<li>
+		<a id="url" href="#" class="left">$item.url</a>
+		<a class="del_url right" href="#" title="delete this url">X</a>
+		<a id="actual_on_action" href="#" class="action actual_on_action">Actual On</a>
+		<a id="get_action" href="#" class="action get_action">GET</a>
+		<a id="put_action" href="#" class="action put_action">PUT</a>
+		<a id="post_action" href="#" class="action post_action">POST</a>
+		<div class="clear"></div>
+		<div class="div_res"></div>
+	<li>
+	
+</ul>
+
+<div class="clear"></div>
