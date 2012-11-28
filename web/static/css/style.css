@@ -1,0 +1,35 @@
+.container{
+	width: auto;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+.row{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.page-header{
+	text-align: center;
+}
+span.label:hover{
+	cursor: pointer;
+}
+hr{margin:0;}
+
+.left{float: left; text-align: left;}
+.right{float: right; text-align: right;}
+.invisible{display: none;}
+.visible{display: block;}
+
+.success{
+	background-color: #DFF0D8;
+}
+.warring{
+	background-color: #DADADA;
+}
+.error{
+	background-color: #F2DEDE;	
+}
+ul.unstyled li{
+	border-bottom: 1px solid #FFF;
+	padding:3px 10px;
+}
