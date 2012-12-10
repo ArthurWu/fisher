@@ -1,17 +1,16 @@
-import web, os, sys
-import json
-import ConfigParser
-
+import os, sys
 ROOT = os.path.dirname(__file__)
-TEMPLATES_DIR = os.path.join(ROOT, 'templates')
-PROJECT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-sys.path.append(PROJECT_DIR)
+TEMPLATES_DIR = os.path.abspath(os.path.join(ROOT, 'templates'))
+PROJECT_DIR = os.path.abspath(os.path.join(ROOT, '..'))
+PACKAGES_DIR = os.path.abspath(os.path.join(ROOT, '../packages'))
+sys.path.extend([PROJECT_DIR, PACKAGES_DIR])
 
-import fit
+import web
+import json
 
 urls = (
 	'/', 'Index', 
-	'/test-results', 'TestResult'
+	'/test-results', 'views.testresult.TestResult'
 )
 
 render = web.template.render(TEMPLATES_DIR)
@@ -20,17 +19,7 @@ class Index:
 	def GET(self):
 		return render.index()
 
-class TestResult:
-	CACHE_RESULTS = None
-
-	def GET(self):
-		if self.CACHE_RESULTS:
-			return json.dumps(self.CACHE_RESULTS)
-		else:
-			results = fit.check_results()
-			self.CACHE_RESULTS = results
-			return json.dumps(results)
-
+application = web.application(urls, globals()).wsgifunc()
 if __name__ == '__main__':
 	app = web.application(urls, globals())
 	app.run()

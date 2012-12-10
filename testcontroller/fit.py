@@ -1,6 +1,6 @@
 from urllib2 import urlopen
 import os
-from runner import get_config
+from utils import get_config
 try:
 	import json
 except:
@@ -45,16 +45,15 @@ def check_results(test_root = DEFAULT_ROOT, tests = None):
 		for root, dirs, files in os.walk(result_folder):
 			files.sort()
 			#result file name formart: 20120202171855_424_0_26_0.xml
-			latest_result = files and files[0].split('.')[0].split('_')
-			result = convert_result([int(i) for i in latest_result])
+			latest_result = files and files[-1].split('.')[0].split('_')
+			result, date = convert_result([int(i) for i in latest_result])
 			result.setdefault('url', test)
+			result.setdefault('latest_hostory', '%s?pageHistory&resultDate=%s' % (test, date))
 			results.append(result)
 	
 	return sort_by_status(results)
 
 def get_properties(url):
-	#print url+PARAMS_PROPERTIES
-	#print urlopen(url+PARAMS_PROPERTIES).read()
 	return json.loads(urlopen(url+PARAMS_PROPERTIES).read())
 
 def get_subtest_urls(url):
@@ -74,7 +73,7 @@ def convert_result(result):
 	else:
 		green = True
 
-	return {'red': red, 'gray': gray, 'green': green}
+	return {'red': red, 'gray': gray, 'green': green}, date
 
 def sort_by_status(results):
 	reds = []

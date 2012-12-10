@@ -1,7 +1,7 @@
 import web
 from datetime import datetime
 import os
-DB_PATH = os.path.join(os.path.dirname(__file__), 'database/data.sqlite')
+DB_PATH = os.path.join(os.path.dirname(__file__), 'data.sqlite')
 
 db = web.database(dbn='sqlite', db=DB_PATH)
 

@@ -1,4 +1,4 @@
-from runner import get_config
+from utils import get_config
 from vm_host import HostServer
 from vm import Vm
 import json
