@@ -18,3 +18,4 @@ class TestResult:
 		actual_on = utils.cache_time()
 		res['actual_on'] = actual_on
 		return json.dumps(res)
+		

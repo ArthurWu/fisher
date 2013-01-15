@@ -11,6 +11,7 @@ $(function(){
 		updateTestResults(selected_team[0].text);
 	});
 
+
 	$('#id_team_warrior').click(function(e){changeTeam(e, this);});
 	$('#id_team_wizard').click(function(e){changeTeam(e, this);});
 	$('#id_team_hunter').click(function(e){changeTeam(e, this);});
